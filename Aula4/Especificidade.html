@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especificidade</title>
+  <style>
+    /* 0.0.0.1 */
+    /* Esse é o mais abrangente (menos específico) */
+    h4 {
+      background: #0050c3;
+    }
+
+    /* 0.0.1.1 */
+    /* Aqui, já estamos falando de especificidade de classe,
+     ainda é abrangente, porém, mais específico que as tags */
+    .novaCor {
+      color: #FFFF;
+      background: #00f0fa;
+    }
+
+    /* 0.1.0.1 */
+    /* Aqui temos uma especificidade de ID */
+    #bold1,
+    #bold2 {
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+
+    }
+
+    /* 0.1.1.1 */
+    /* Esse caso aqui, no código HTML está mesclado a classe
+    com ID. */
+    #bold-novacor {
+      color: purple;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Especificidades</h1>
+  <p>É o grau de importância de estilos, onde sempre será
+    considerado - se sobresairá - o estilo que estiver em um
+    grau de importância maior. Esses graus são classificados
+    com a notação que remete a do "IP- Internet Protocol" -
+    0.0.0.0, onde, eles representam:
+  </p>
+
+  <ol>
+    <li>Inline</li>
+    <li>Id</li>
+    <li>Class</li>
+    <li>Tags</li>
+  </ol>
+
+  <p>Nessa ordem de importância.</p>
+
+  <p> Como exemplo, no código fonte deste site, foi aplicado uma
+    regra de estilo para todos os h4, e como h4 é uma TAG,
+    a ordem de relevância ficaria como 0.0.0.1. Ex:
+  </p>
+
+  <h4>Texto 1</h4>
+
+  <p><br>Agora, no próximo exemplo, temos uma tag h4 com uma class aplicada.
+    dessa forma, a ordem de relevância seria 0.0.1.1. Ex:
+  </p>
+  <h4 class="novaCor">Texto 2</h4>
+
+  <p><br>Aqui, temos uma tag h4 com um Id aplicado. dessa forma, a ordem
+    de relevância seria 0.1.0.1. Isso porque não temos uma classe definida para
+    esta tag, e como todas as tags h4 já existem uma regra aplicada, a segunda e última
+    posição da nossa ordem acaba adquirindo uma ordem de importância. Ex:
+  </p>
+  <h4 id="bold1">Texto 3</h4>
+
+  <p><br>Já aqui, temos algo que completaria o exemplo anterior: uma tag h4 com
+    id e class definidos. Sendo assim, o grau de importância ficaria: 0.1.1.1. Ex:
+  </p>
+  <h4 id="bold-novacor" class="novaCor">Texto 4</h4>
+
+  <p><br>Este último caso é o caso onde temos o mais completo de todos: o Inline.
+    Onde, além de termos uma declaração de estilo para a tag, classe e id, também temos
+    uma declaração de estilo dentro da linha do código, fazendo com o que está escrito nela
+    se sobresaia sobre qualquer outra declaração realizada. Ou seja, se na tag foi considerada
+    uma cor de fonte e no Inline foi considerado outra cor de fonte, o Inline se sobresairá.
+    Ex:
+  </p>
+  <!-- 1.1.1.1 -->
+  <!-- Aqui, já estou mesclando um style inline, 
+    o mais específico de todos. -->
+  <h4 id="bold2" class="novaCor" style="font-style: italic;">Texto 5</h4>
+
+</body>
+
+</html>
