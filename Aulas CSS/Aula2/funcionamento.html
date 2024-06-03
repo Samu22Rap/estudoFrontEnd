@@ -4,11 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Funcionamento CSS</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    .interno {
+      color: whitesmoke;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
-
+  <h1>Funcionamento CSS: Externo, Interno ou Inline?</h1>
+  <ul>
+    <li>Externo: criar um arquivo .CSS externo</li>
+    <li>
+      <p>Interno: Utilizar o código CSS na tag HEAD <br>Essa não é compartilhável com outras páginas HTML</p>
+    </li>
+    <li>Inline: utilizando a tag "Style"</li>
+  </ul>
 </body>
+
+<main>
+  <h1>Aqui é o MAIN.</h1>
+  <ul>
+    <li>
+      <p>Um exemplo de um CSS Externo aplicado, é a cor de fundo desta página, que está referenciada em um arquivo .CSS
+        externo.
+        Esse arquivo está sendo chamado pela propriedade "Link" na HEAD deste HTML.</p>
+    </li>
+    <li>
+      <p class="interno">Um exemplo utilizando o CSS Interno, com declaração na tag HEAD:
+        Com a fonte trocada para branco e em negrito (bold).</p>
+    </li>
+    <li>
+      <p style="color: purple; background: #ffff; font-weight: bolder;">Aqui seria um exemplo do Inline aplicado dentro
+        do próprio HTML.</p>
+    </li>
+  </ul>
+</main>
 
 </html>
